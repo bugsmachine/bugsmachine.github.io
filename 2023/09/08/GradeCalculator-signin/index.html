@@ -18,26 +18,23 @@
   <meta name="author" content="bugsmachine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Login Form           body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       bor">
+    <meta name="description" content="SignIn Form           body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       bo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grade Calculator -- log in">
-<meta property="og:url" content="https://bugsmachine.github.io/2023/09/08/GradeCalculator-login/index.html">
+<meta property="og:title" content="GradeCalculator-signin">
+<meta property="og:url" content="https://bugsmachine.github.io/2023/09/08/GradeCalculator-signin/index.html">
 <meta property="og:site_name" content="JieC&#39;s blog">
-<meta property="og:description" content="Login Form           body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       bor">
+<meta property="og:description" content="SignIn Form           body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       bo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://bugsmachine.github.io/img/23-09-08-1/3.png">
-<meta property="og:image" content="https://bugsmachine.github.io/img/23-09-08-1/2.png">
-<meta property="article:published_time" content="2023-09-07T16:19:18.000Z">
-<meta property="article:modified_time" content="2023-09-08T09:37:42.398Z">
+<meta property="article:published_time" content="2023-09-08T11:57:50.000Z">
+<meta property="article:modified_time" content="2023-09-08T12:57:36.158Z">
 <meta property="article:author" content="bugsmachine">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bugsmachine.github.io/img/23-09-08-1/3.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Grade Calculator -- log in - JieC&#39;s blog</title>
+  <title>GradeCalculator-signin - JieC&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -260,7 +257,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Grade Calculator -- log in"></span>
+            <span id="subtitle" data-typed-text="GradeCalculator-signin"></span>
           
         </div>
 
@@ -271,8 +268,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-08 00:19" pubdate>
-          September 8, 2023 am
+        <time datetime="2023-09-08 19:57" pubdate>
+          September 8, 2023 pm
         </time>
       </span>
     
@@ -283,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k words
+          3.2k words
         
       </span>
     
@@ -294,7 +291,7 @@
         
         
         
-          25 mins
+          27 mins
         
       </span>
     
@@ -335,13 +332,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Grade Calculator -- log in</h1>
+            <h1 id="seo-header">GradeCalculator-signin</h1>
             
             
               <div class="markdown-body">
                 
                 <head>
-  <title>Login Form</title>
+  <title>SignIn Form</title>
   
   <style>
     body {
@@ -392,11 +389,11 @@
 </head>
 <body>
   <div class="container11">
-    <h2>Login Form</h2>
+    <h2>SignIn Form</h2>
     <p>Please check <a href="https://bugsmachine.github.io/2023/09/08/GradeCalculator-login/#Problem-shouting">problem shouting</a> if you meet any problem.</p>
     <div class="form-group">
-      <label for="API">Your log in api:</label>
-      <label for="API">Sample API: http://127.0.0.1:8000/authentication/login/</label>
+      <label for="API">Your Sign in api:</label>
+      <label for="API">Sample API: http://127.0.0.1:8000/authentication/signin/</label>
       <input type="text" id="API" placeholder="Enter your API">
     </div>
     <div class="alert"></div>
@@ -406,18 +403,35 @@
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="Enter your password">
+      <input type="text" id="password" placeholder="Enter your password">
     </div>
     <div class="form-group">
-      <button onclick="logIn()">Log In</button>
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" placeholder="Enter your phone (optional)">
     </div>
+    <div class="form-group">
+      <button onclick="logIn()">Sign In</button>
+    </div>
+     <label id="hiddenLabel" >0</label>
+     <input type="hidden" id="hiddenInput">
   </div>
 
   <script>
     function logIn() {
+      var hiddenLabel = document.getElementById("hiddenLabel");
+      var hiddenInput = document.getElementById("hiddenInput");
+    
+    // Get the integer value from the hidden label and store it in the hidden input field
+      hiddenInput.value = parseInt(hiddenLabel.textContent);
+    
+    // Access the integer value from the hidden input field
+      var intValue = parseInt(hiddenInput.value);
+
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
       var api = document.getElementById("API").value;
+      var phone = document.getElementById("phone").value;
+      var count = intValue;
       if (api.trim() == ''){
         showAlert('Error: Failed Login', 'Empty API!', 'Please enter yor log in api first.', 'error');
       }else if (api.slice(-1) != '/'){
@@ -425,7 +439,7 @@
       }else if (username.trim() === '' || password.trim() === '') {
         showAlert('Error: Failed Login', 'Empty Username or Empty Password!', 'Please enter the username and password first.', 'error');
       } else {
-        var requestBody = 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password);
+        var requestBody = 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + "&phone-number=" + encodeURIComponent(phone) + "&count=" + encodeURIComponent(count);
         var xhr = new XMLHttpRequest();
         xhr.open('POST', api, true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -433,13 +447,19 @@
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
               var response = JSON.parse(xhr.responseText);
-              if (response.message === 'Login successful') {
+              if (response.message === 'Values inserted successfully') {
                 // Rest of your code for successful login
-                showAlert('Login successful', '', '','success');
-              } else if (response.message === 'Invalid password') {
-                showAlert('Error: Wrong Password!', 'User \'' + username + '\' exists, but you entered an incorrect password!', 'Please check again the correctness of the username and password!', 'error');
-              } else if (response.message === 'Invalid username') {
-                showAlert('Error: No such user found!', 'No user \'' + username + '\' found!', 'Correct the username or sign in a new account.', 'error');
+                showAlert('SignIn successful', '', '','success');
+              }else if(response.message === 'already exists'){
+                showAlert('Error: Failed Sign In', 'User \'' + username + '\' already exists', 'Try another username','error');
+              } else if (response.message === 'no phone number') {
+                var myLabel = document.getElementById("hiddenLabel");
+    
+                // Change the value of the label dynamically
+                myLabel.textContent = "1";
+                showAlert('Reminder: No phone Number', 'You did not enter your phone number!', 'You will not able to reset password or retrieval your account without a phone number!', 'error');
+              } else if (response.message === 'error') {
+                showAlert('Error: database build error', '', '', 'error');
               } else {
                 showAlert('Failed to Log In!', '','Error code: E1. NO message received', 'error');
               }
@@ -460,25 +480,6 @@
     }
   </script>
 </body>
-
-<h1 id="Problem-shouting"><a href="#Problem-shouting" class="headerlink" title="Problem shouting"></a>Problem shouting</h1><h2 id="1-CORS-problem-Error-Code-0"><a href="#1-CORS-problem-Error-Code-0" class="headerlink" title="1. CORS problem (Error Code 0)"></a>1. CORS problem (Error Code 0)</h2><p>If you meet error code 0, that means you are facing CORS problem.</p>
-<div>
-  <figure>
-    <img src="/img/23-09-08-1/3.png" srcset="/img/loading.gif" lazyload alt="Figure1: Error Code 0" width="600" height="200">
-    <p style="text-align: center;">Figure1: Error Code 0</p>
-  </figure>
-</div>
-
-<p>You can check your browser console to check if the problem is caused by browser’s CORS policy. If your console is the same in figure 1, that means the api is baned by CORS policy. </p>
-<div>
-  <figure>
-    <img src="/img/23-09-08-1/2.png" srcset="/img/loading.gif" lazyload alt="Figure2: CORS problem">
-    <p style="text-align: center;">Figure2: CORS problem</p>
-  </figure>
-</div>
-
-<p>You need to disable browser’s security to send request to back-end. Detail how to disable the browser’s security you can check my blog: <a href="https://bugsmachine.github.io/2023/09/08/CORS/#Disable-Google-Chrome-security">How to fix Google Chrome’s CORS problem</a>.</p>
-
                 
               </div>
             
@@ -495,8 +496,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Grade Calculator -- log in</div>
-      <div>https://bugsmachine.github.io/2023/09/08/GradeCalculator-login/</div>
+      <div>GradeCalculator-signin</div>
+      <div>https://bugsmachine.github.io/2023/09/08/GradeCalculator-signin/</div>
     </div>
     <div class="license-meta">
       
