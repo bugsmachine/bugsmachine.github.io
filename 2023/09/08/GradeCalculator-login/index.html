@@ -18,19 +18,20 @@
   <meta name="author" content="bugsmachine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Login Form        body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       border">
+    <meta name="description" content="Login Form           body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       bor">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grade Calculator -- log in">
 <meta property="og:url" content="https://bugsmachine.github.io/2023/09/08/GradeCalculator-login/index.html">
 <meta property="og:site_name" content="JieC&#39;s blog">
-<meta property="og:description" content="Login Form        body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       border">
+<meta property="og:description" content="Login Form           body {       font-family: Arial, sans-serif;     }     .container11 {       max-width: 800px;       margin: 0 auto;       padding: 20px;       border: 1px solid #ccc;       bor">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bugsmachine.github.io/img/23-09-08-1/3.png">
 <meta property="og:image" content="https://bugsmachine.github.io/img/23-09-08-1/2.png">
 <meta property="article:published_time" content="2023-09-07T16:19:18.000Z">
-<meta property="article:modified_time" content="2023-09-08T08:13:10.285Z">
+<meta property="article:modified_time" content="2023-09-08T09:30:48.526Z">
 <meta property="article:author" content="bugsmachine">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bugsmachine.github.io/img/23-09-08-1/2.png">
+<meta name="twitter:image" content="https://bugsmachine.github.io/img/23-09-08-1/3.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -282,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k words
+          3k words
         
       </span>
     
@@ -293,7 +294,7 @@
         
         
         
-          26 mins
+          25 mins
         
       </span>
     
@@ -341,6 +342,7 @@
                 
                 <head>
   <title>Login Form</title>
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -391,6 +393,7 @@
 <body>
   <div class="container11">
     <h2>Login Form</h2>
+    <p>please check <a href="https://bugsmachine.github.io/2023/09/08/GradeCalculator-login/#Problem-shouting">problem shouting</a> if you meet any problem.</p>
     <div class="form-group">
       <label for="API">Your log in api:</label>
       <label for="API">Sample API: http://127.0.0.1:8000/authentication/login/</label>
@@ -438,10 +441,10 @@
               } else if (response.message === 'Invalid username') {
                 showAlert('Error: No such user found!', 'No user \'' + username + '\' found!', 'Correct the username or sign in a new account.', 'error');
               } else {
-                showAlert('Failed to Log In!', 'Error code: E1. There may be an error disconnected from the API. Please try again later. Please contact us (caodingjie@gmail.com) if the issue persists!', 'error');
+                showAlert('Failed to Log In!', '','Error code: E1. NO message received', 'error');
               }
             } else {
-              showAlert('Failed to Log In!', 'Error code: ' + xhr.status + '. There may be an error disconnected from the API. Please try again later. Please contact us (caodingjie@gmail.com) if the issue persists!', 'error');
+              showAlert('Failed to Log In!', 'Error code: 0.','CORS!!!!!! ', 'error');
             }
           }
         };
@@ -458,7 +461,15 @@
   </script>
 </body>
 
-<h1 id="Problem-shouting"><a href="#Problem-shouting" class="headerlink" title="Problem shouting"></a>Problem shouting</h1><h2 id="1-How-to-fix-the-CORS-problem"><a href="#1-How-to-fix-the-CORS-problem" class="headerlink" title="1. How to fix the CORS problem"></a>1. How to fix the CORS problem</h2><p>You can check your browser console to check if the problem is caused by browser’s CORS policy. If your console is the same in figure 1, that means the api is baned by CORS policy. </p>
+<h1 id="Problem-shouting"><a href="#Problem-shouting" class="headerlink" title="Problem shouting"></a>Problem shouting</h1><h2 id="1-How-to-fix-the-CORS-problem"><a href="#1-How-to-fix-the-CORS-problem" class="headerlink" title="1. How to fix the CORS problem"></a>1. How to fix the CORS problem</h2><p>If you meet error code 0, that means you are facing CORS problem.</p>
+<div>
+  <figure>
+    <img src="/img/23-09-08-1/3.png" srcset="/img/loading.gif" lazyload alt="Figure1: CORS problem" width="600" height="200">
+    <p style="text-align: center;">Figure1: CORS problem</p>
+  </figure>
+</div>
+
+<p>You can check your browser console to check if the problem is caused by browser’s CORS policy. If your console is the same in figure 1, that means the api is baned by CORS policy. </p>
 <div>
   <figure>
     <img src="/img/23-09-08-1/2.png" srcset="/img/loading.gif" lazyload alt="Figure1: CORS problem">
