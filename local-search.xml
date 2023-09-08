@@ -4,19 +4,13 @@
   
   
   <entry>
-    <title>Grade Calculator</title>
-    <link href="/2023/09/08/GradeCalculator/"/>
-    <url>/2023/09/08/GradeCalculator/</url>
+    <title>CORS</title>
+    <link href="/2023/09/08/CORS/"/>
+    <url>/2023/09/08/CORS/</url>
     
-    <content type="html"><![CDATA[<head>  <title>Login Form</title>  <style>    body {      font-family: Arial, sans-serif;    }    .container11 {      max-width: 800px;      margin: 0 auto;      padding: 20px;      border: 1px solid #ccc;      border-radius: 5px;    }    .form-group {      margin-bottom: 15px;    }    .form-group label {      display: block;      margin-bottom: 5px;    }    .form-group input {      width: 100%;      padding: 5px;      border: 1px solid #ccc;      border-radius: 3px;    }    .form-group button {      padding: 10px 20px;      background-color: #4CAF50;      color: #fff;      border: none;      border-radius: 3px;      cursor: pointer;    }    .alert {      margin-bottom: 15px;      padding: 10px;      border-radius: 3px;    }    .alert.error {      background-color: #f44336;      color: #fff;    }    .alert.success {      background-color: #4CAF50;      color: #fff;    }  </style></head><body>  <div class="container11">    <h2>Login Form</h2>    <div class="alert"></div>    <div class="form-group">      <label for="username">Username:</label>      <input type="text" id="username" placeholder="Enter your username">    </div>    <div class="form-group">      <label for="password">Password:</label>      <input type="password" id="password" placeholder="Enter your password">    </div>    <div class="form-group">      <button onclick="logIn()">Log In</button>    </div>  </div>  <script>    function logIn() {      var username = document.getElementById("username").value;      var password = document.getElementById("password").value;      if (username.trim() === '' || password.trim() === '') {        showAlert('Error: Failed Login', 'Empty Username or Empty Password!', 'Please enter the username and password first.', 'error');      } else {        var requestBody = 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password);        var xhr = new XMLHttpRequest();        xhr.open('POST', 'http://127.0.0.1:8000/authentication/login/', true);        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');        xhr.onreadystatechange = function() {          if (xhr.readyState === 4) {            if (xhr.status === 200) {              var response = JSON.parse(xhr.responseText);              if (response.message === 'Login successful') {                // Rest of your code for successful login                window.location.href = 'Welcome.html?username=' + encodeURIComponent(username);              } else if (response.message === 'Invalid password') {                showAlert('Error: Wrong Password!', 'User \'' + username + '\' exists, but you entered an incorrect password!', 'Please check again the correctness of the username and password!', 'error');              } else if (response.message === 'Invalid username') {                showAlert('Error: No such user found!', 'No user \'' + username + '\' found!', 'Correct the username or sign in a new account.', 'error');              } else {                showAlert('Failed to Log In!', 'Error code: E1. There may be an error disconnected from the API. Please try again later. Please contact us (caodingjie@gmail.com) if the issue persists!', 'error');              }            } else {              showAlert('Failed to Log In!', 'Error code: ' + xhr.status + '. There may be an error disconnected from the API. Please try again later. Please contact us (caodingjie@gmail.com) if the issue persists!', 'error');            }          }        };        xhr.send(requestBody);      }    }    function showAlert(title, message, description, type) {      var alertDiv = document.querySelector('.alert');      alertDiv.classList.remove('error', 'success');      alertDiv.classList.add(type);      alertDiv.innerHTML = '<strong>' + title + '</strong><br>' + message + '<br>' + description;    }  </script></body>]]></content>
+    <content type="html"><![CDATA[<p>aaaaa</p>]]></content>
     
     
-    
-    <tags>
-      
-      <tag>a</tag>
-      
-    </tags>
     
   </entry>
   
