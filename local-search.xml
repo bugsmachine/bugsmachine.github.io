@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>CPT205 Computer Graphics 1: General Introduction to Hardware and Software</title>
+    <link href="/2023/09/12/CPT205-1/"/>
+    <url>/2023/09/12/CPT205-1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="CPT205-Computer-Graphics-1-General-Introduction-to-Hardware-and-Software"><a href="#CPT205-Computer-Graphics-1-General-Introduction-to-Hardware-and-Software" class="headerlink" title="CPT205 Computer Graphics 1: General Introduction to Hardware and Software"></a>CPT205 Computer Graphics 1: General Introduction to Hardware and Software</h1><p>Computer Graphics is concerned with all aspects of producing pictures or images using a computer including the image you see on the computer screen,the programming code used to create images and mathematical models of real-world (Virtual World).</p><h2 id="Hardware-and-Software"><a href="#Hardware-and-Software" class="headerlink" title="Hardware and Software"></a>Hardware and Software</h2><ul><li><p>Graphics Hardware</p><ul><li>Input (Light Pens…) -&gt; Processing (GPU) -&gt; Output Devices (LCD…)</li><li><span style="background-color: rgba(255, 255, 0, 0.5);"><u>Framebuffers</u></span>: <em>Block if memory, hold all the display content</em></li><li><span style="background-color: rgba(255, 255, 0, 0.5);">Pixels</span> (<em>an element of framebuffer</em>) and Screen Resolution</li></ul></li><li><p>Graphics Software</p><ul><li>Techniques (Algorithms, Procedures)</li><li>Programming Library &#x2F; API (OpenGL, JOGL and so on)</li></ul></li></ul><h2 id="Framebuffer"><a href="#Framebuffer" class="headerlink" title="Framebuffer"></a>Framebuffer</h2><p>If the screen resolution is 640 × 480, it means the screen has 640 pixels in <u>horizontal</u> and 480 in <u>vertical</u>. Thus, the framebuffer’s capacity will be 640 × 480 × <span style="background-color: rgba(0, 0, 255, 0.2);">bit depth</span> (<em>number of bits allocated per pixel in a buffer</em>).</p><p>If bit depth is 1, that means each pixel only has 1 bit and indicate the screen only can show black or white because 1 bit can only have 0 or 1. Usually, <span style="background-color: rgba(255, 0, 0, 0.3);">32 bits (RGBA)</span> are needed to give a colorful screen.</p><p><strong>RGBA (32 bits) &#x3D; <span style="color: red;">R</span>ed (8 bits) <span style="color: red;">G</span>reen (8 bits) <span style="color: red;">B</span>lue (8 bits) <span style="color: red;">A</span>lpha (8 bits)</strong> </p><p>Total 16,777,216 colours, potential for 255 reds, greens and blues. Alpha indicates the transparency degree which is in range 0-1, 0 stands for totally transparency and 1 for fully opaque.</p><p>To show the graphics, the GPU need have <span style="background-color: rgba(0, 255, 0, 0.3);">640 × 480 × 32 bits &#x3D; 1,228,800 bytes</span> framebuffer storage for a 640 × 480’s screen resolution.</p><h2 id="Pixels"><a href="#Pixels" class="headerlink" title="Pixels"></a>Pixels</h2><p>Pixel is the most basic addressable image element in a screen. It can be <span style="background-color: rgba(255, 255, 0, 0.5);">CRT</span> (Colour triad -RGB phosphor dots) or <span style="background-color: rgba(255, 255, 0, 0.5);">LCD</span> (Single colour element).</p><h2 id="Raster-display"><a href="#Raster-display" class="headerlink" title="Raster display"></a>Raster display</h2><ol><li><p>Video Formats:</p><ul><li><span style="background-color: rgba(255, 255, 0, 0.5);">Interlaced</span>: NTSC, PAL….</li><li>Non-interlaced: VAG, SVAG…</li><li>RGB: <span style="color: blue;">3 independent video signals</span> and synchronization signal, vary in resolution and refresh rate</li></ul><p> In an <span style="background-color: rgba(255, 255, 0, 0.5);">interlaced</span> display or image, the content is split into two or more sets of lines, and these sets are displayed or processed alternately, creating the appearance of a complete image or video frame. </p><p> This process happens rapidly, creating the illusion of a complete image to the human eye.</p></li><li><p>Display Equipment:</p><ul><li><span style="background-color: rgba(0, 255, 0, 0.3);">Cathode ray tubes (CRTs):</span><ul><li>Strong electrical fields and high voltage</li><li>Very good resolution</li><li>Heavy, not flat</li></ul></li><li><span style="background-color: rgba(0, 255, 0, 0.3);">Liquid crystal displays (LCDs):</span><ul><li>Flat</li><li>Light weight</li><li>Low power consumption</li></ul></li></ul><p> LCDs elements <span style="color: red;">do not emit light</span>; use backlight behind the LCD matrix. Colour is obtained by placing filters in front of each LCD element. Voltage degree will change the grey degree of LCDs elements.</p></li></ol><h2 id="Graphics-Software"><a href="#Graphics-Software" class="headerlink" title="Graphics Software"></a>Graphics Software</h2><p>Graphics software include graphics drivers, libraries, editors, geometric modellers….</p><p>Some programming API can help to program such as OpenGL, JOGL…</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CPT205 Computer Graphics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Computer Graphics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Solve CORS Problems in Google Chrome</title>
     <link href="/2023/09/08/CORS/"/>
     <url>/2023/09/08/CORS/</url>
