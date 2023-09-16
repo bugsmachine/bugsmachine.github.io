@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://bugsmachine.github.io/img/23-09-13-1/header1.jpg">
 <meta property="article:published_time" content="2023-09-13T05:41:29.000Z">
-<meta property="article:modified_time" content="2023-09-16T08:28:36.281Z">
+<meta property="article:modified_time" content="2023-09-16T08:39:16.960Z">
 <meta property="article:author" content="bugsmachine">
 <meta property="article:tag" content="Introduction to Networking">
 <meta name="twitter:card" content="summary_large_image">
@@ -336,7 +336,7 @@
             
               <div class="markdown-body">
                 
-                <p>This is a protected page, you need password to view the content. This page will automatically release at 2024-09-13 15:58:20. Please contact <a href="mailto:&#99;&#97;&#x6f;&#100;&#105;&#x6e;&#103;&#106;&#x69;&#x65;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#99;&#97;&#x6f;&#100;&#105;&#x6e;&#103;&#106;&#x69;&#x65;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a> if you want view now.<br><!DOCTYPE html></p>
+                <p>This is a protected page, you need password to view the content. This page will automatically release at 2024-09-13 15:58:20. Please contact <a href="mailto:&#99;&#x61;&#111;&#x64;&#105;&#110;&#x67;&#106;&#x69;&#101;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#99;&#x61;&#111;&#x64;&#105;&#110;&#x67;&#106;&#x69;&#101;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> if you want view now.<br><!DOCTYPE html></p>
 <html>
 <head>
   <title>Password Protected Page</title>
@@ -378,16 +378,16 @@
     button:hover {
       background-color: #45a049;
     }
-    .alert1 {
+    .alert {
       margin-bottom: 15px;
       padding: 10px;
       border-radius: 3px;
     }
-    .alert1.error {
+    .alert.error {
       background-color: #f44336;
       color: #fff;
     }
-    .alert1.success {
+    .alert.success {
       background-color: #4CAF50;
       color: #fff;
     }
@@ -417,10 +417,11 @@
 
     function redirectToWebpage() {
       var webpageURL = "https://bugsmachine.github.io/2023/09/13/CAN201-1/"; // Replace with the URL of the webpage you want to redirect to
+
       window.location.href = webpageURL;
     }
     function showAlert(title, message, description, type) {
-      var alertDiv = document.querySelector('.alert1');
+      var alertDiv = document.querySelector('.alert');
       alertDiv.classList.remove('error', 'success');
       alertDiv.classList.add(type);
       alertDiv.innerHTML = '<strong>' + title + '</strong><br>' + message + '<br>' + description;
@@ -428,6 +429,7 @@
   </script>
 </body>
 </html>
+
                 
               </div>
             
