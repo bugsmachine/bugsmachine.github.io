@@ -25,13 +25,13 @@
 <meta property="og:site_name" content="JieC&#39;s blog">
 <meta property="og:description" content="CAN201 CPT205 Introduction to Networking 1: protocol, layer and model…Protocols define format, order of messages sent and received among network entities; and actions taken on message transmission, re">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://bugsmachine.github.io/img/23-09-13-1/header1.jpg">
+<meta property="og:image" content="https://bugsmachine.github.io/img/CAN201/header1.jpg">
 <meta property="article:published_time" content="2023-09-13T05:41:29.000Z">
-<meta property="article:modified_time" content="2023-09-17T06:46:24.867Z">
+<meta property="article:modified_time" content="2023-09-17T13:54:20.962Z">
 <meta property="article:author" content="bugsmachine">
 <meta property="article:tag" content="Introduction to Networking">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bugsmachine.github.io/img/23-09-13-1/header1.jpg">
+<meta name="twitter:image" content="https://bugsmachine.github.io/img/CAN201/header1.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -254,7 +254,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/23-09-13-1/header6.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/CAN201/header6.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
       <div class="banner-text text-center fade-in-up">
@@ -283,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.6k words
+          5.4k words
         
       </span>
     
@@ -294,7 +294,7 @@
         
         
         
-          30 mins
+          46 mins
         
       </span>
     
@@ -373,7 +373,7 @@
 <h4 id="5-Wireless-access-network"><a href="#5-Wireless-access-network" class="headerlink" title="5. Wireless access network:"></a>5. Wireless access network:</h4><p>Shared wireless access network connects end system to router…</p>
 <div>
 <figure>
-    <img src="/img/23-09-13-1/1.png" srcset="/img/loading.gif" lazyload alt="Figure1: Wireless access network" >
+    <img src="/img/CAN201/1.png" srcset="/img/loading.gif" lazyload alt="Figure1: Wireless access network" >
     <p style="text-align: center;">Figure1: Wireless access network</p>
   </figure>
 </div>
@@ -400,15 +400,15 @@
 </ul>
 <div style="display: flex; justify-content: space-between;">
   <figure>
-    <img src="/img/23-09-13-1/2.png" srcset="/img/loading.gif" lazyload alt="Figure2: Twisted Pair (TP)" width="300" height="150">
+    <img src="/img/CAN201/2.png" srcset="/img/loading.gif" lazyload alt="Figure2: Twisted Pair (TP)" width="300" height="150">
     <p style="text-align: center;">Figure2: Twisted Pair (TP)</p>
   </figure>
   <figure>
-    <img src="/img/23-09-13-1/3.png" srcset="/img/loading.gif" lazyload alt="Figure3: Coaxial cable" width="300" height="150">
+    <img src="/img/CAN201/3.png" srcset="/img/loading.gif" lazyload alt="Figure3: Coaxial cable" width="300" height="150">
     <p style="text-align: center;">Figure3: Coaxial cable</p>
   </figure>
   <figure>
-    <img src="/img/23-09-13-1/4.png" srcset="/img/loading.gif" lazyload alt="Figure4: Fiber optic cable" width="300" height="150">
+    <img src="/img/CAN201/4.png" srcset="/img/loading.gif" lazyload alt="Figure4: Fiber optic cable" width="300" height="150">
     <p style="text-align: center;">Figure4: Fiber optic cable</p>
   </figure>
 </div>
@@ -425,7 +425,68 @@
 <ul>
 <li>If arrival rate (in bits) to link exceeds transmission rate of link for a period of time:<br>• packets will queue, wait to be transmitted on link<br>• packets can be dropped (lost) if memory (buffer) fills up</li>
 </ul>
-<h4 id="2-Circuit-Switching"><a href="#2-Circuit-Switching" class="headerlink" title="2. Circuit Switching"></a>2. Circuit Switching</h4>
+<h4 id="2-Circuit-Switching"><a href="#2-Circuit-Switching" class="headerlink" title="2. Circuit Switching"></a>2. Circuit Switching</h4><p>Circuit segment is idle if not used by call (Dedicated resources: no sharing)<br>Two methods used in circuit switching: <span style="background-color: rgba(255, 0, 0, 0.3);">FDM verse TDM</span></p>
+<div>
+<figure>
+    <img src="/img/CAN201/5.png" srcset="/img/loading.gif" lazyload alt="Figure5: FDM verse TDM" >
+    <p style="text-align: center;">Figure5: FDM verse TDM</p>
+  </figure>
+</div>
+
+<h3 id="Packet-switching-VS-circuit-switching"><a href="#Packet-switching-VS-circuit-switching" class="headerlink" title="Packet switching VS circuit switching"></a>Packet switching VS circuit switching</h3><p><span style="background-color: rgba(255, 0, 0, 0.3); display: block; text-align: center;">Packet switching allows more users to use network</span></p>
+<p>PS Advantages: resource sharing; simpler, no call setup<br>PS Drawbacks: excessive congestion possible: delay and loss; protocols needed for reliable data transfer, congestion control</p>
+<h3 id="Network-of-network"><a href="#Network-of-network" class="headerlink" title="Network of network"></a>Network of network</h3><p>IXP: Internet exchange point</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/CAN201/6.png" srcset="/img/loading.gif" lazyload alt="Figure6: Internet of internet 1" width="500" height="180">
+    <p style="text-align: center;">Figure6: Internet of internet 1</p>
+  </figure>
+  <figure>
+    <img src="/img/CAN201/7.png" srcset="/img/loading.gif" lazyload alt="Figure7: Internet of internet 2" width="500" height="180">
+    <p style="text-align: center;">Figure7: Internet of internet 2</p>
+  </figure>
+</div>
+
+<ul>
+<li>Small view of well-connected large networks (figure 7)<ul>
+<li>‘tier-1’ commercial ISPs (e.g., ChineTel, Sprint, AT&amp;T, NTT), national &amp; international<br>coverage</li>
+<li>content provider network (e.g., Google): private network that connects it data centers to Internet, often bypassing tier-1, regional ISPs</li>
+</ul>
+</li>
+</ul>
+<h2 id="Network-Performance"><a href="#Network-Performance" class="headerlink" title="Network Performance"></a>Network Performance</h2><p>Network performance refers to the efficiency and effectiveness of a computer network in terms of data transmission, response times, and overall reliability. It encompasses various factors that contribute to the smooth and efficient functioning of a network, including bandwidth, delay, throughput, packet loss, etc.</p>
+<h3 id="Packet-Delay"><a href="#Packet-Delay" class="headerlink" title="Packet Delay"></a>Packet Delay</h3><p>Packet arrival rate to link (temporarily) exceeds output link capacity. Then, packets queue, wait for turn.</p>
+<p>Delay can happen in queueing, transmission… If <span style="color: rgba(255, 0, 0, 0.8);">no free buffers</span>, packet will be dropped (<span style="color: rgba(255, 0, 0, 0.8);">loss</span>) Lost packet may be retransmitted by previous node, by source end system, or not at all.</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/CAN201/8.jpg" srcset="/img/loading.gif" lazyload alt="Figure8: Delay happened" width="500" height="150">
+    <p style="text-align: center;">Figure8: Delay happened</p>
+  </figure>
+  <figure>
+    <img src="/img/CAN201/9.png" srcset="/img/loading.gif" lazyload alt="Figure9: Total delay" width="500" height="150">
+    <p style="text-align: center;">Figure9: Total delay</p>
+  </figure>
+</div>
+
+<p>R: link bandwidth (bps)<br>L: packet length (bits)<br>a: average packet arrival rate</p>
+<ul>
+<li>La&#x2F;R ~ 0: avg. queueing delay small</li>
+<li>La&#x2F;R -&gt; 1: avg. queueing delay large</li>
+<li>La&#x2F;R &gt; 1: more “work” arriving than can be serviced, average delay infinite!</li>
+</ul>
+<h3 id="Throughput"><a href="#Throughput" class="headerlink" title="Throughput"></a>Throughput</h3><p>Throughput: rate (bits&#x2F;time unit) at which bits transferred between sender&#x2F;receiver</p>
+<ul>
+<li><span style="color: rgba(255, 0, 0, 0.8);">instantaneous</span>: rate at given point in time</li>
+<li><span style="color: rgba(255, 0, 0, 0.8);">average</span>: rate over longer period of time<div class="note note-success">
+            <p>Bottleneck link: Link on end-end path that constrains end-end throughput</p>
+          </div></li>
+</ul>
+<h2 id="Network-Security"><a href="#Network-Security" class="headerlink" title="Network Security"></a>Network Security</h2><ul>
+<li>Malware: virus, worm, spyware</li>
+<li>DDoS: Distributed denial of service attack</li>
+<li>Packet “sniffing”</li>
+</ul>
+
                 
               </div>
             
