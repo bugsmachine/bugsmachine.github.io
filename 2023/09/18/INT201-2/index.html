@@ -18,16 +18,16 @@
   <meta name="author" content="bugsmachine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="asasa">
+    <meta name="description" content="INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)DFA is a finite-state machine that accepts or rejects a given string of symbols, by running through a state sequence uniq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="INT201-2">
+<meta property="og:title" content="INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)">
 <meta property="og:url" content="https://bugsmachine.github.io/2023/09/18/INT201-2/index.html">
 <meta property="og:site_name" content="JieC&#39;s blog">
-<meta property="og:description" content="asasa">
+<meta property="og:description" content="INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)DFA is a finite-state machine that accepts or rejects a given string of symbols, by running through a state sequence uniq">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://bugsmachine.github.io/img/23-09-17-1/a.jpg">
 <meta property="article:published_time" content="2023-09-18T12:04:40.000Z">
-<meta property="article:modified_time" content="2023-09-18T12:22:33.868Z">
+<meta property="article:modified_time" content="2023-09-18T14:25:54.432Z">
 <meta property="article:author" content="bugsmachine">
 <meta property="article:tag" content="Decision Computation and Language">
 <meta name="twitter:card" content="summary_large_image">
@@ -37,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>INT201-2 - JieC&#39;s blog</title>
+  <title>INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA) - JieC&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -260,7 +260,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="INT201-2"></span>
+            <span id="subtitle" data-typed-text="INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)"></span>
           
         </div>
 
@@ -283,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5 words
+          3k words
         
       </span>
     
@@ -294,7 +294,7 @@
         
         
         
-          1 mins
+          26 mins
         
       </span>
     
@@ -331,12 +331,93 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">INT201-2</h1>
+            <h1 id="seo-header">INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)</h1>
             
             
               <div class="markdown-body">
                 
-                <p>asasa</p>
+                <h1 id="INT201-Decision-Computation-and-Language-2-Deterministic-Finite-Automata-DFA"><a href="#INT201-Decision-Computation-and-Language-2-Deterministic-Finite-Automata-DFA" class="headerlink" title="INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)"></a>INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)</h1><p>DFA is a <em><strong>finite-state</strong></em> machine that accepts or rejects a given string of symbols, by running through a state sequence uniquely determined by the string.</p>
+<p>It is invented to <em><strong>recognize a special class of formal language</strong></em> and have many practical applications:</p>
+<ul>
+<li>Lexical analysis -&gt; scans the input program from beginning to end and divides it into tokens like identifiers, constants, and keywords and to remove comments and white space (specify tokens of programming languages)</li>
+<li>Model checking,  reasoning about systems with objective of proving they satisfy useful properties</li>
+<li>Statistical models for analyzing biological and textual sequences</li>
+</ul>
+<h2 id="Introduction-to-DFA"><a href="#Introduction-to-DFA" class="headerlink" title="Introduction to DFA"></a>Introduction to DFA</h2><div>
+  <figure>
+    <img src="/img/23-09-17-1/1.png" srcset="/img/loading.gif" lazyload alt="Figure1: Diagram of Deterministic Finite Automata" width="500" height="150">
+    <p style="text-align: center;">Figure1: Diagram of Deterministic Finite Automata</p>
+  </figure>
+</div>
+
+<h2 id="Tuples-of-DFA"><a href="#Tuples-of-DFA" class="headerlink" title="Tuples of DFA"></a>Tuples of DFA</h2><p>A DFA is defined as a 5-tuple:</p>
+<div class="note note-success">
+            <div style="text-align: center;">    <p style="font-size: 24px; font-weight: bold;">M = (Q, Σ, δ, q, F)</p></div>
+          </div>
+<p>Where</p>
+<ol>
+<li>Q is a finite set of <strong>states</strong> (In figure 1, q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub> ∈ Q. State need to be surrounded with single circle),</li>
+<li>Σ is a finite set of symbols, called the <strong>alphabet</strong> of the automaton (In figure 1, Σ &#x3D; {0,1}),</li>
+<li>δ : Q × Σ → Q is a function, called the <strong>transition function</strong> (δ will be detailed discuss later in next section of this blog),</li>
+<li>q ∈ Q is called the <strong>initial state</strong> (In figure 1, q<sub>1</sub> is initial state),</li>
+<li>F ⊆ Q is a set of <strong>accepting&#x2F;terminal states</strong>  (In figure 1, q<sub>3</sub> is terminal states, need to be surrounded with double circle).</li>
+</ol>
+<h2 id="Transition-function-δ"><a href="#Transition-function-δ" class="headerlink" title="Transition function δ"></a>Transition function δ</h2><p>In example of figure 1, one of the transition function is <strong>q<sub>2</sub> &#x3D; 𝛿 (q<sub>1</sub>, 1)</strong>. This indicate when at state q<sub>1</sub>, input ‘1’ will lead to jump to state q<sub>2</sub>.</p>
+<h3 id="Extend-of-δ-δ-can-be-extend-to-δ"><a href="#Extend-of-δ-δ-can-be-extend-to-δ" class="headerlink" title="Extend of δ: δ can be extend to δ*"></a><strong>Extend of δ</strong>: δ can be extend to δ<sup>*</sup></h3><p>Normal δ can only accept a letter as a input, like 𝛿 (q<sub>1</sub>, 1), 1 is only a <strong>letter</strong>. However, extended 𝛿 aka. 𝛿<sup>*</sup>, can accept a <strong>string (word)</strong>.</p>
+<div class="note note-success">
+            <div style="text-align: center;">δ*(q, ϵ) = q for all q ∈ Q<br>δ* (q, w𝑎) = δ (δ* (q, w) , 𝑎) for all q ∈ Q; w ∈ Σ* ; a ∈ Σ</div>
+          </div>
+
+<p><strong>Example</strong>:</p>
+<div style="text-align: center;">
+δ (q<sub>0</sub>, 𝑎) = q<sub>1</sub> and δ (q<sub>1</sub>, b) = q<sub>2</sub> we can get -> δ* (q<sub>0</sub>, 𝑎b) = q<sub>2</sub>
+</div>
+
+<h2 id="Symbolic-description-of-the-example-DFA"><a href="#Symbolic-description-of-the-example-DFA" class="headerlink" title="Symbolic description of the example DFA"></a>Symbolic description of the example DFA</h2><p>Automaton M &#x3D; (Q, Σ, δ, q, F)<br>Set of states Q &#x3D; {i, t, r}, Σ &#x3D; {0, 1}, F &#x3D; {t} and the transition function δ is given by</p>
+<div class="note note-success">
+            <div style="text-align: center;">δ(i, 0) = r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;δ(i, 1) = t<br>δ(t, 0) = t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;δ(i, 1) = t<br>δ(r, 0) = r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;δ(r, 1) = r<br></div>
+          </div>
+
+<p>It is simpler to describe a transition function by a table of values. In this example we have figure 2</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/23-09-17-1/2.png" srcset="/img/loading.gif" lazyload alt="Figure2: Table of transition function δ" width="300" height="200">
+    <p style="text-align: center;">Figure2: Table of transition function δ</p>
+  </figure>
+  <figure>
+    <img src="/img/23-09-17-1/3.png" srcset="/img/loading.gif" lazyload alt="Figure3: Missing one transition function" width="300" height="200">
+    <p style="text-align: center;">Figure3: Missing one transition function</p>
+  </figure>
+</div>
+
+<p>If δ is a partial function (<strong>not defined for some state&#x2F;letter pairs</strong> shows in figure 3), then the DFA rejects an input if it ever encounters such a pair.</p>
+<h2 id="Language-defined-by-DFA"><a href="#Language-defined-by-DFA" class="headerlink" title="Language defined by DFA"></a>Language defined by DFA</h2><p>Suppose we have a DFA M. A word w ∈ Σ* is said to be <em>accepted or recognized by M</em> if δ*(q<sub>0</sub>, w) ∈ F, otherwise it is said to be <em>rejected</em>. The set of all words accepted by M is called the language accepted by M and will be denoted by L(M). Thus</p>
+<div class="note note-success">
+            <div style="text-align: center;"><p style="font-size: 20px;">L(M) = {w ∈ Σ* : δ*(q<sub>0</sub>, w) ∈ F}</p></div>
+          </div>
+
+<p><span style="background-color: rgba(255, 0, 0, 0.3);">Any finite language is accepted by some DFA</span><br>A language <strong>A</strong> is called <strong>regular</strong>, if there exists a finite automaton M such that <strong>A &#x3D; L(M)</strong> (This means A is <strong>regular</strong> if a can be <strong>recognized by a DFA</strong>)</p>
+<h2 id="Regular-operations-on-languages"><a href="#Regular-operations-on-languages" class="headerlink" title="Regular operations on languages"></a>Regular operations on languages</h2><p>Let A and B be two languages over the same alphabet.<br>The union of A and B is defined as:</p>
+<div class="note note-success">
+            <div style="text-align: center;">A ∪ B = {w : w ∈ A or w ∈ B}</div>
+          </div>
+<p>The concatenation of A and B is defined as:</p>
+<div class="note note-success">
+            <div style="text-align: center;">AB = {ww′ : w ∈ A and w′ ∈ B}</div>
+          </div>
+<p>The star of A is defined as:</p>
+<div class="note note-success">
+            <div style="text-align: center;">A* = {u<sub>1</sub> u<sub>2...</sub>u<sub>k</sub>: k ≥ 0 and u<sub>i</sub> ∈ A for all i = 1, 2, . . . , k}</div>
+          </div>
+
+<p><strong>Example of A</strong>:<br>Given two languages A &#x3D; {0, 01} and B &#x3D; {1, 10}. Then</p>
+<div style="text-align: center;">
+A ∪ B = {0, 01, 1, 10}<br>
+AB = {01, 010, 011, 0110}<br>
+A* = {ϵ, 0, 01, 00, 001, 010, 0101, 000, 0001, 00101, . . .}<br>
+</div>
+
+<h2 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h2><p>The set of regular languages is closed under the union operation, i.e., if <strong>A</strong> and <strong>B</strong> are regular languages over the same alphabet Σ, then <strong>A ∪ B</strong> is also a regular language.</p>
 
                 
               </div>
@@ -382,7 +463,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>INT201-2</div>
+      <div>INT201 Decision Computation and Language 2: Deterministic Finite Automata (DFA)</div>
       <div>https://bugsmachine.github.io/2023/09/18/INT201-2/</div>
     </div>
     <div class="license-meta">
