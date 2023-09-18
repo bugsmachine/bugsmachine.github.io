@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://bugsmachine.github.io/img/23-09-17-1/a.jpg">
 <meta property="article:published_time" content="2023-09-17T06:38:21.000Z">
-<meta property="article:modified_time" content="2023-09-17T17:09:14.190Z">
+<meta property="article:modified_time" content="2023-09-18T12:19:58.067Z">
 <meta property="article:author" content="bugsmachine">
 <meta property="article:tag" content="Decision Computation and Language">
 <meta name="twitter:card" content="summary_large_image">
@@ -283,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          2.4k words
         
       </span>
     
@@ -294,7 +294,7 @@
         
         
         
-          12 mins
+          21 mins
         
       </span>
     
@@ -372,7 +372,19 @@
 
 <p>If u, v, w are strings and w&#x3D;uv then u is a <strong>prefix</strong> of w and v is a <strong>suffix</strong> of w. A proper prefix of w is a prefix that is <span style="background-color: rgba(255, 0, 0, 0.3);"><em>not equal to ϵ of w</em></span>. (similarly for proper suffix)<br>w<sup>n</sup> denotes the concatenation of n copies of w</p>
 <p>∑<sup>*</sup>(star closure of ∑) denotes the set of all strings (words) over ∑ .<br>∑<sup>+</sup>(positive closure of ∑) denotes the set of all <span style="background-color: rgba(255, 255, 0, 0.5);"><em>non-empty</em></span> strings (words) over ∑ . </p>
-<p>Both of ∑<sup>*</sup> and ∑<sup>+</sup> are <strong>infinite set</strong>.</p>
+<p>Both of ∑<sup><em></sup> and ∑<sup>+</sup> are <strong>infinite set</strong>.<br>A <strong>language L</strong> (or <strong>formal language</strong>) over alphabet ∑ is a subset of ∑<sup></em></sup>.</p>
+<h2 id="Grammars"><a href="#Grammars" class="headerlink" title="Grammars"></a>Grammars</h2><p>Grammars are sets of rules for generating syntactically correct programs&#x2F;sentences. There are most commonly 4 applications in programming languages (stages of compilation):</p>
+<ol>
+<li>Lexical analysis</li>
+<li>Parsing</li>
+<li>Code generation</li>
+<li>Code optimization</li>
+</ol>
+<h3 id="Lexical-analysis"><a href="#Lexical-analysis" class="headerlink" title="Lexical analysis"></a>Lexical analysis</h3><p>Divide sequence of characters into tokens, such as variable names, operators, labels. In a natural language tokens are strings of consecutive letters (easy to recognize!) </p>
+<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>Identify relationships between tokens (Parse Tree). It represents the syntactic structure of a string according to some context-free grammar.</p>
+<h3 id="Code-generation"><a href="#Code-generation" class="headerlink" title="Code generation"></a>Code generation</h3><p>A part of the process chain of a compiler and converts intermediate representation of source code into a form (e.g., machine code) that can be readily executed by the target system</p>
+<h3 id="Code-optimization"><a href="#Code-optimization" class="headerlink" title="Code optimization"></a>Code optimization</h3><p>Process of modifying a software system to make some aspect of it work more efficiently or use fewer resources…</p>
+<h2 id="Automata"><a href="#Automata" class="headerlink" title="Automata"></a>Automata</h2><p>An automaton is an abstract model of a digital computer. It will be discuss in the following sections, such as <a href="https://bugsmachine.github.io/2023/09/18/INT201-security-2/">Deterministic Finite Automata (DFA)</a> and so on…</p>
 
                 
               </div>
