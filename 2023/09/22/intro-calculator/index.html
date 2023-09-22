@@ -18,23 +18,39 @@
   <meta name="author" content="bugsmachine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="aaa">
+    <meta name="description" content="Introduction to My APP Academic CalculatorThis desktop application’s GUI is written by JavaFX and it’s back-end API is written in Django. Also, Mysql is employed to have a bigger storage database. Fro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="intro-calculator">
+<meta property="og:title" content="Introduction to My APP Academic Calculator">
 <meta property="og:url" content="https://bugsmachine.github.io/2023/09/22/intro-calculator/index.html">
 <meta property="og:site_name" content="JieC&#39;s blog">
-<meta property="og:description" content="aaa">
+<meta property="og:description" content="Introduction to My APP Academic CalculatorThis desktop application’s GUI is written by JavaFX and it’s back-end API is written in Django. Also, Mysql is employed to have a bigger storage database. Fro">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/1.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/4.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/5.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/6.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/2.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/3.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/7.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/8.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/9.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/10.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/11.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/12.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/13.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/14.png">
+<meta property="og:image" content="https://bugsmachine.github.io/img/intro/15.png">
 <meta property="article:published_time" content="2023-09-22T09:13:10.000Z">
-<meta property="article:modified_time" content="2023-09-22T09:17:59.494Z">
+<meta property="article:modified_time" content="2023-09-22T10:49:01.881Z">
 <meta property="article:author" content="bugsmachine">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bugsmachine.github.io/img/intro/1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>intro-calculator - JieC&#39;s blog</title>
+  <title>Introduction to My APP Academic Calculator - JieC&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +273,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="intro-calculator"></span>
+            <span id="subtitle" data-typed-text="Introduction to My APP Academic Calculator"></span>
           
         </div>
 
@@ -280,7 +296,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3 words
+          2.5k words
         
       </span>
     
@@ -291,7 +307,7 @@
         
         
         
-          1 mins
+          21 mins
         
       </span>
     
@@ -328,12 +344,100 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">intro-calculator</h1>
+            <h1 id="seo-header">Introduction to My APP Academic Calculator</h1>
             
             
               <div class="markdown-body">
                 
-                <p>aaa</p>
+                <h1 id="Introduction-to-My-APP-Academic-Calculator"><a href="#Introduction-to-My-APP-Academic-Calculator" class="headerlink" title="Introduction to My APP Academic Calculator"></a>Introduction to My APP Academic Calculator</h1><p>This desktop application’s GUI is written by JavaFX and it’s back-end API is written in Django. Also, Mysql is employed to have a bigger storage database.</p>
+<h2 id="Front-end-Part"><a href="#Front-end-Part" class="headerlink" title="Front-end Part"></a>Front-end Part</h2><p>There are 6 stages (windows) in total constituted this app’s GUI including log in stage, sign in stage, reset phone number stage, forget password stage, main (calculation) stage, and user profile stage.</p>
+<h3 id="Log-In-Interface"><a href="#Log-In-Interface" class="headerlink" title="Log In Interface"></a>Log In Interface</h3><p>In this interface, user can log in, sign in, and reset password (shows in figure 1).</p>
+<p>It achieve the functionality to show and hide the password via two container fields (shows in figure 2 and 3).</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/intro/1.png" srcset="/img/loading.gif" lazyload alt="Figure1: Log In Interface" width="500" height="150">
+    <p style="text-align: center;">Figure1: Log In Interface</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/4.png" srcset="/img/loading.gif" lazyload alt="Figure2: Showing password" width="500" height="150">
+    <p style="text-align: center;">Figure2: Showing password</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/5.png" srcset="/img/loading.gif" lazyload alt="Figure3: Hide Password" width="500" height="150">
+    <p style="text-align: center;">Figure3: Hide Password</p>
+  </figure>
+</div>
+
+<p>Meanwhile, It will popup alert when user enter the wrong&#x2F;empty password, and loss connection with API (shows in figure 4,5,6).</p>
+<p>Especially, if user enter a wrong password for a existed username, they can choose to reset password (open reset password stage). If no such user, the alert will lead user to sign in stage.</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/intro/6.png" srcset="/img/loading.gif" lazyload alt="Figure4: Error alert for No connection to API" width="500" height="150">
+    <p style="text-align: center;">Figure4: Error alert for No connection to API</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/2.png" srcset="/img/loading.gif" lazyload alt="Figure5: Error alert for Empty Username or Password" width="500" height="150">
+    <p style="text-align: center;">Figure5: Error alert for Empty Username or Password</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/3.png" srcset="/img/loading.gif" lazyload alt="Figure6: Warning alert for wrong password" width="500" height="150">
+    <p style="text-align: center;">Figure6: Warning alert for wrong password</p>
+  </figure>
+</div>
+
+<h3 id="Sign-In-Interface"><a href="#Sign-In-Interface" class="headerlink" title="Sign In Interface"></a>Sign In Interface</h3><p>User need to enter their username, password, and phone number (optional). Figure 7, 8, 9 shows corresponding warning and alert will show if user enter empty username&#x2F;password or enter two wrong password (fail in confirm password).</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/intro/7.png" srcset="/img/loading.gif" lazyload alt="Figure7: Warning for empty username" width="500" height="120">
+    <p style="text-align: center;">Figure7: Warning for empty username</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/8.png" srcset="/img/loading.gif" lazyload alt="Figure8: Warning for empty password" width="500" height="120">
+    <p style="text-align: center;">Figure8: Warning for empty password</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/9.png" srcset="/img/loading.gif" lazyload alt="Figure9: Warning for two different password" width="500" height="120">
+    <p style="text-align: center;">Figure9: Warning for two different password</p>
+  </figure>
+</div>
+
+<p>Moreover, if user want to sign an existed username, system will warning the username is taken and open the forget password option for user (figure 10). </p>
+<p>Also, alert will shows for no connection, no phone entered, and successfully registered (shows in figure 10,11,12) .</p>
+<p>However, phone number is optional, the empty phone will only popup at the first time, user still can bind phone number in user profile interface. </p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/intro/10.png" srcset="/img/loading.gif" lazyload alt="Figure10: Username already exist" width="500" height="120">
+    <p style="text-align: center;">Figure10: Username already exist</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/11.png" srcset="/img/loading.gif" lazyload alt="Figure11: Warning for empty phone number" width="500" height="120">
+    <p style="text-align: center;">Figure8: Warning for empty phone number</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/12.png" srcset="/img/loading.gif" lazyload alt="Figure12: Successfully registered" width="500" height="120">
+    <p style="text-align: center;">Figure12: Successfully registered</p>
+  </figure>
+</div>
+
+<h2 id="Forget-Password-Reset-Password"><a href="#Forget-Password-Reset-Password" class="headerlink" title="Forget Password &#x2F; Reset Password"></a>Forget Password &#x2F; Reset Password</h2><p>User who bind with phone can reset password. System will popup an alert to warn user that the target account to conform the account is correct after enter the phone number and new password (figure 13). </p>
+<p>Backend will change the user’s password in database if user confirm this is the right account. An warning alert will popup if this phone number does not connect to any account (figure 14).</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/intro/13.png" srcset="/img/loading.gif" lazyload alt="Figure10: Username already exist" width="500" height="120">
+    <p style="text-align: center;">Figure10: Username already exist</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/14.png" srcset="/img/loading.gif" lazyload alt="Figure11: Warning for empty phone number" width="500" height="120">
+    <p style="text-align: center;">Figure8: Warning for empty phone number</p>
+  </figure>
+  <figure>
+    <img src="/img/intro/15.png" srcset="/img/loading.gif" lazyload alt="Figure12: Successfully registered" width="500" height="120">
+    <p style="text-align: center;">Figure12: Successfully registered</p>
+  </figure>
+</div>
+
+<p>Also, as shown in Sign In Interface, empty phone number&#x2F;password and two different password will be warning (part shows in figure 15).</p>
+<h3 id="Main-Calculation-Interface"><a href="#Main-Calculation-Interface" class="headerlink" title="Main (Calculation) Interface"></a>Main (Calculation) Interface</h3><p>There are many functionalities in Calculation Interface including reset display, add subject, calculate, save, and some input boxes fro input subject, grade, and weight.</p>
 
                 
               </div>
@@ -351,7 +455,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>intro-calculator</div>
+      <div>Introduction to My APP Academic Calculator</div>
       <div>https://bugsmachine.github.io/2023/09/22/intro-calculator/</div>
     </div>
     <div class="license-meta">
@@ -403,23 +507,6 @@
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/09/22/CPT203-security-2/" title="CPT201 Software Engineering I 2: Software Process, Models and activities">
-                        <span class="hidden-mobile">CPT201 Software Engineering I 2: Software Process, Models and activities</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
