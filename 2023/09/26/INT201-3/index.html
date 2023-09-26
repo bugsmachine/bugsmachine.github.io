@@ -18,16 +18,16 @@
   <meta name="author" content="bugsmachine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)">
+    <meta name="description" content="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)A finite automata is deterministic, if the next state the machine goes to on any given symbol is uniquely determined.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)">
 <meta property="og:url" content="https://bugsmachine.github.io/2023/09/26/INT201-3/index.html">
 <meta property="og:site_name" content="JieC&#39;s blog">
-<meta property="og:description" content="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)">
+<meta property="og:description" content="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)A finite automata is deterministic, if the next state the machine goes to on any given symbol is uniquely determined.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://bugsmachine.github.io/img/23-09-17-1/a.jpg">
 <meta property="article:published_time" content="2023-09-26T08:08:28.000Z">
-<meta property="article:modified_time" content="2023-09-26T08:13:20.789Z">
+<meta property="article:modified_time" content="2023-09-26T09:35:57.073Z">
 <meta property="article:author" content="bugsmachine">
 <meta property="article:tag" content="Decision Computation and Language">
 <meta property="article:tag" content="Automata">
@@ -285,7 +285,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          73 words
+          2.3k words
         
       </span>
     
@@ -296,7 +296,7 @@
         
         
         
-          1 mins
+          19 mins
         
       </span>
     
@@ -338,7 +338,67 @@
             
               <div class="markdown-body">
                 
-                <h1 id="INT201-Decision-Computation-and-Language-3-Nondeterministic-Finite-Automata-NFA"><a href="#INT201-Decision-Computation-and-Language-3-Nondeterministic-Finite-Automata-NFA" class="headerlink" title="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)"></a>INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)</h1>
+                <h1 id="INT201-Decision-Computation-and-Language-3-Nondeterministic-Finite-Automata-NFA"><a href="#INT201-Decision-Computation-and-Language-3-Nondeterministic-Finite-Automata-NFA" class="headerlink" title="INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)"></a>INT201 Decision Computation and Language 3: Nondeterministic Finite Automata (NFA)</h1><p>A finite automata is <em><strong>deterministic</strong></em>, if the next state the machine goes to on any given symbol is <strong>uniquely</strong> determined. Like <a href="https://bugsmachine.github.io/2023/09/18/INT201-2/">DFA</a>, which is deterministic, every input will lead to exactly one state.</p>
+<div style="display: flex; justify-content: space-between;">
+  <figure>
+    <img src="/img/23-09-17-1/3-1.png" srcset="/img/loading.gif" lazyload alt="Figure8: Delay happened" width="450" height="120">
+    <p style="text-align: center;">(1)</p>
+  </figure>
+  <figure>
+    <img src="/img/23-09-17-1/3-2.png" srcset="/img/loading.gif" lazyload alt="Figure9: Total delay" width="650" height="120">
+    <p style="text-align: center;">(2)</p>
+  </figure>
+</div>
+<p style="text-align: center;">Figure1: DFA(1) <i>vs</i> NFA(2)</p>
+
+<p>While NFA, in figure1 (2), one input can result in multiple states. For example, from initial state q<sub>1</sub>, input (symbol) 1 can lead to <strong>two</strong> states: q<sub>1</sub>  and q<sub>2</sub>…</p>
+<h2 id="Formal-Definition-of-NFA"><a href="#Formal-Definition-of-NFA" class="headerlink" title="Formal Definition of NFA"></a>Formal Definition of NFA</h2><p>For any alphabet Σ, we define Σ<sub>ϵ</sub> to be the set:  Σ<sub>ϵ</sub> &#x3D; <strong>Σ ∪ {ϵ}</strong></p>
+<p>For any set Q, the power set of Q, denoted by P(Q), is the set of all subsets of Q:  <strong>P(Q) &#x3D; {R : R ⊆ Q}</strong></p>
+<p>Almost the same as DFA, A <strong>nondeterministic finite automaton</strong> (NFA) is a 5-tuple: </p>
+<div class="note note-success">
+            <div style="text-align: center;">    <p style="font-size: 24px; font-weight: bold;">M = (Q, Σ, δ, q, F)</p></div>
+          </div>
+<p>Where</p>
+<ol>
+<li>Q is a finite set of <strong>states</strong> (In figure 1, q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub> ∈ Q. State need to be surrounded with single circle),</li>
+<li>Σ is a finite set of symbols, called the <strong>alphabet</strong> of the automaton (In figure 1, Σ &#x3D; {0,1}),</li>
+<li><span style="background-color: rgba(255, 255, 0, 0.3);">δ :  Q × Σ<sub>ϵ</sub> → P(Q) is a function, called the <strong>transition function</strong> (δ will be detailed discuss later in next section of this blog),</span></li>
+<li>q ∈ Q is called the <strong>initial state</strong> (In figure 1, q<sub>1</sub> is initial state),</li>
+<li>F ⊆ Q is a set of <strong>accepting&#x2F;terminal states</strong>  (In figure 1, q<sub>3</sub> is terminal states, need to be surrounded with double circle).</li>
+</ol>
+<p><em><strong>NB.</strong></em> <u>The only difference in tuple definition is δ, the transition function where in DFA is δ : Q × Σ → Q.</u></p>
+<p>In NFA, Σ → Σ<sub>ϵ</sub> and Q → P(Q), which indicate NFA can <strong>accept ϵ (<em>empty</em>)</strong> and return <strong>a set of states</strong> rather tha a single state (DFA).</p>
+<div style="text-align: center;">
+    <span style="background-color: rgba(255, 0, 0, 0.3);">PS. Note that every DFA is also an NFA.</span>
+</div>
+
+<h2 id="Extend-of-δ-δ-can-be-extend-to-δ"><a href="#Extend-of-δ-δ-can-be-extend-to-δ" class="headerlink" title="Extend of δ: δ can be extend to δ*"></a>Extend of δ: δ can be extend to δ*</h2><div class="note note-success">
+            <div style="text-align: center;">    δ(q, ϵ) = {q} for all q ∈ Q<br>    δ(q, 𝑤𝑎) = ∪<sub>p∈δ(q, w)</sub>δ(p, 𝑎) for all q ∈ Q; w ∈ Σ*; a ∈ Σ</div>
+          </div>
+
+<p>Thus, δ(q, w) &#x3D; {All possible states form q}. W is accepted if there is a accepting state in δ(q, w).</p>
+<h2 id="Accepting-Rejecting-Paths"><a href="#Accepting-Rejecting-Paths" class="headerlink" title="Accepting&#x2F;Rejecting Paths"></a>Accepting&#x2F;Rejecting Paths</h2><p>In <strong>DFA</strong>, if we can get from state p to state q via transitions labelled by letters of a word w. Then p and q are connected by a <strong>PATH</strong> with label w.</p>
+<p>The same in <strong>NFA</strong>…</p>
+<h2 id="Language-accepted-by-NFA"><a href="#Language-accepted-by-NFA" class="headerlink" title="Language accepted by NFA"></a>Language accepted by NFA</h2><p>Let M &#x3D; (Q, Σ, δ, q, F) be an NFA. The language L(M) accepted by M is defined as:</p>
+<div class="note note-success">
+            <div style="text-align: center;">    L(M) = {w ∈ Σ<sup>∗</sup> : M accepts w }.</div>
+          </div>
+
+<h2 id="Equivalence-of-DFAs-and-NFAs"><a href="#Equivalence-of-DFAs-and-NFAs" class="headerlink" title="Equivalence of DFAs and NFAs"></a>Equivalence of DFAs and NFAs</h2><p><span style="background-color: rgba(255, 0, 0, 0.3);">Two machines (of any type) are <strong>equivalent</strong> if they recognize the same language.</span></p>
+<p>DFA is a restricted form of NFA:</p>
+<ul>
+<li><span style="background-color: rgba(255, 255, 0, 0.3);">Every NFA has an equivalent DFA.</span></li>
+<li>We can convert an <em>arbitrary</em> NFA to a DFA that accepts the same language.</li>
+<li>DFA has the same power as NFA</li>
+</ul>
+<h3 id="Convert-DFA-to-NFA"><a href="#Convert-DFA-to-NFA" class="headerlink" title="Convert DFA to NFA"></a>Convert DFA to NFA</h3><p>Let M &#x3D; (Q, Σ, δ, q, F) be a DFA. Recall that δ is a function δ : Q × Σ → Q. We define the function δ′ : Q × Σ<sub>ϵ</sub> → P(Q) as follows. For any r ∈ Q and for any a ∈ Σ<sub>ϵ</sub>,</p>
+<div class="note note-success">
+            <div style="text-align: center;">    If 𝑎 ≠ ϵ, δ'(r,a) = {δ(r,a)}<br>    if 𝑎 = ϵ, δ'(r,a) = ∅</div>
+          </div>
+
+<p>Thus, N &#x3D; (Q, Σ, δ′, q, F) is an <strong>NFA</strong>, whose behavior is <span style="background-color: rgba(255, 255, 0, 0.3);">exactly the same</span> as DFA M. L(M) &#x3D; L(N). L(M) &#x3D; L(N).</p>
+<h3 id="Convert-NFA-to-DFA"><a href="#Convert-NFA-to-DFA" class="headerlink" title="Convert NFA to DFA"></a>Convert NFA to DFA</h3><p>Not too difficult but tedious, will not exist in FINAL EXAM…</p>
+
                 
               </div>
             
