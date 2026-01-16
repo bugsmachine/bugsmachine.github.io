@@ -1,30 +1,30 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import menubarScreenshot from '../../assets/screenshots/menubar.png'
 import settingsScreenshot from '../../assets/screenshots/settings.png'
 import aboutScreenshot from '../../assets/screenshots/about.png'
 
-const screenshots = [
-    {
-        src: menubarScreenshot,
-        alt: 'TimeBar Menu Bar',
-        title: 'Menu Bar Integration',
-        description: 'See time zones at a glance with country flags and day/night indicators',
-    },
-    {
-        src: settingsScreenshot,
-        alt: 'TimeBar Settings',
-        title: 'Customizable Settings',
-        description: 'Drag and drop to reorder components, choose any timezone worldwide',
-    },
-    {
-        src: aboutScreenshot,
-        alt: 'TimeBar About',
-        title: 'Open Source',
-        description: 'Fully transparent and open source under CC BY-NC-SA 4.0 license',
-    },
-]
-
 export function Screenshots() {
+    const { t } = useTranslation()
+
+    const screenshots = [
+        {
+            src: menubarScreenshot,
+            alt: 'TimeBar Menu Bar',
+            titleKey: 'menu_bar',
+        },
+        {
+            src: settingsScreenshot,
+            alt: 'TimeBar Settings',
+            titleKey: 'settings',
+        },
+        {
+            src: aboutScreenshot,
+            alt: 'TimeBar About',
+            titleKey: 'about',
+        },
+    ]
+
     return (
         <section id="screenshots" className="section-padding bg-gradient-to-b from-white to-gray-50">
             <div className="container-wide mx-auto">
@@ -37,10 +37,10 @@ export function Screenshots() {
                     className="text-center mb-16 lg:mb-20"
                 >
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                        See it in action
+                        {t('screenshots.title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        A native macOS app designed with elegance and simplicity in mind
+                        {t('screenshots.description')}
                     </p>
                 </motion.div>
 
@@ -71,10 +71,10 @@ export function Screenshots() {
 
                             {/* Text Content */}
                             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                                {screenshot.title}
+                                {t(`screenshots.list.${screenshot.titleKey}.title`)}
                             </h3>
                             <p className="text-gray-600">
-                                {screenshot.description}
+                                {t(`screenshots.list.${screenshot.titleKey}.description`)}
                             </p>
                         </motion.div>
                     ))}

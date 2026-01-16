@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { Download, Github, ChevronDown } from 'lucide-react'
 import { appProfile } from '../../data/appProfile'
 import { SecurityNotice } from '../ui/SecurityNotice'
 import appIcon from '../../assets/app-icon.png'
 
 export function Hero() {
+    const { t } = useTranslation()
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Gradient */}
@@ -36,7 +39,7 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 text-balance"
                 >
-                    {appProfile.marketing_copy.hero_headline}
+                    {t('hero.headline')}
                 </motion.h1>
 
                 {/* Subheadline */}
@@ -46,7 +49,7 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 text-balance"
                 >
-                    {appProfile.marketing_copy.hero_subheadline}
+                    {t('hero.subheadline')}
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -63,7 +66,7 @@ export function Hero() {
                         className="btn-primary gap-2 w-full sm:w-auto"
                     >
                         <Download className="w-5 h-5" />
-                        {appProfile.marketing_copy.cta_primary}
+                        {t('hero.cta_primary')}
                     </a>
                     <a
                         href={appProfile.social.github}
@@ -72,7 +75,7 @@ export function Hero() {
                         className="btn-secondary gap-2 w-full sm:w-auto"
                     >
                         <Github className="w-5 h-5" />
-                        {appProfile.marketing_copy.cta_secondary}
+                        {t('hero.cta_secondary')}
                     </a>
                 </motion.div>
 
@@ -90,9 +93,9 @@ export function Hero() {
                         </div>
                     ))}
                     <span className="hidden sm:inline text-gray-300">•</span>
-                    <span>Free & Open Source</span>
+                    <span>{t('download.open_source')}</span>
                     <span className="hidden sm:inline text-gray-300">•</span>
-                    <span>Privacy First</span>
+                    <span>{t('download.privacy')}</span>
                 </motion.div>
 
                 {/* Security Notice */}
@@ -115,7 +118,7 @@ export function Hero() {
                         href="#screenshots"
                         className="flex flex-col items-center gap-2 text-gray-400 hover:text-primary-600 transition-colors"
                     >
-                        <span className="text-sm font-medium">Learn More</span>
+                        <span className="text-sm font-medium">{t('hero.learn_more')}</span>
                         <ChevronDown className="w-5 h-5 animate-bounce" />
                     </a>
                 </motion.div>

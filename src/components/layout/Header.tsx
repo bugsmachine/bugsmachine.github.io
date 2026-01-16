@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Menu, X, Github } from 'lucide-react'
+import { LanguageSelector } from '../ui/LanguageSelector'
 import { motion, AnimatePresence } from 'framer-motion'
 import { appProfile } from '../../data/appProfile'
 import appIcon from '../../assets/app-icon.png'
 
 export function Header() {
+    const { t } = useTranslation()
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -17,9 +20,9 @@ export function Header() {
     }, [])
 
     const navItems = [
-        { label: 'Screenshots', href: '#screenshots' },
-        { label: 'Features', href: '#features' },
-        { label: 'Download', href: '#download' },
+        { label: t('nav.screenshots'), href: '#screenshots' },
+        { label: t('nav.features'), href: '#features' },
+        { label: t('nav.download'), href: '#download' },
     ]
 
     return (
@@ -54,6 +57,7 @@ export function Header() {
                                 {item.label}
                             </a>
                         ))}
+                        <LanguageSelector />
                         <a
                             href={appProfile.social.github}
                             target="_blank"
@@ -86,6 +90,9 @@ export function Header() {
                         className="md:hidden bg-white border-b border-gray-100"
                     >
                         <div className="px-6 py-4 space-y-3">
+                            <div className="pb-2">
+                                <LanguageSelector />
+                            </div>
                             {navItems.map((item) => (
                                 <a
                                     key={item.href}

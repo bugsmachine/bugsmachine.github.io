@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { appProfile } from '../../data/appProfile'
+import { useTranslation } from 'react-i18next'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,8 +24,18 @@ const itemVariants = {
 }
 
 export function Features() {
-    // Take first 8 features for display
-    const displayFeatures = appProfile.features.slice(0, 8)
+    const { t } = useTranslation()
+
+    const features = [
+        { key: 'multiple_time_zones', emoji: '🌍' },
+        { key: 'country_flags', emoji: '🚩' },
+        { key: 'time_difference', emoji: '⏱️' },
+        { key: 'multi_language', emoji: '🌐' },
+        { key: 'highly_customizable', emoji: '⚙️' },
+        { key: 'auto_updates', emoji: '🔄' },
+        { key: 'lightweight', emoji: '💡' },
+        { key: 'privacy_first', emoji: '🔒' },
+    ]
 
     return (
         <section id="features" className="section-padding bg-white">
@@ -39,12 +49,12 @@ export function Features() {
                     className="text-center mb-16 lg:mb-20"
                 >
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                        Everything you need,
+                        {t('features.title')}
                         <br />
-                        <span className="gradient-text">right in your menu bar</span>
+                        <span className="gradient-text">{t('features.subtitle')}</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        TimeBar combines powerful features with elegant simplicity to keep you connected across time zones.
+                        {t('features.description')}
                     </p>
                 </motion.div>
 
@@ -56,9 +66,9 @@ export function Features() {
                     viewport={{ once: true, margin: '-50px' }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
                 >
-                    {displayFeatures.map((feature, index) => (
+                    {features.map((feature) => (
                         <motion.div
-                            key={index}
+                            key={feature.key}
                             variants={itemVariants}
                             className="group relative p-6 lg:p-8 bg-gradient-to-b from-gray-50 to-white 
                          rounded-2xl border border-gray-100 
@@ -72,12 +82,12 @@ export function Features() {
 
                             {/* Title */}
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                {feature.title}
+                                {t(`features.list.${feature.key}.title`)}
                             </h3>
 
                             {/* Description */}
                             <p className="text-gray-600 text-sm leading-relaxed">
-                                {feature.description}
+                                {t(`features.list.${feature.key}.description`)}
                             </p>
                         </motion.div>
                     ))}

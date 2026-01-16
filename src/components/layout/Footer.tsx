@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import { Github, Heart } from 'lucide-react'
 import { appProfile } from '../../data/appProfile'
 import appIcon from '../../assets/app-icon.png'
 
 export function Footer() {
+    const { t } = useTranslation()
     const currentYear = new Date().getFullYear()
 
     return (
@@ -23,7 +25,7 @@ export function Footer() {
                         </div>
                         {/* Mobile: wrap allowed, Desktop: nowrap */}
                         <p className="text-gray-500 text-sm text-center md:text-left md:whitespace-nowrap">
-                            {appProfile.basic_info.tagline}
+                            {t('footer.tagline')}
                         </p>
                     </div>
 
@@ -44,7 +46,7 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="text-gray-600 hover:text-primary-600 font-medium transition-colors"
                         >
-                            Releases
+                            {t('nav.releases')}
                         </a>
                     </div>
                 </div>
@@ -52,7 +54,7 @@ export function Footer() {
                 {/* Bottom */}
                 <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col items-center gap-3">
                     <p className="text-gray-500 text-sm flex items-center gap-1">
-                        Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{' '}
+                        {t('footer.made_with')} <Heart className="w-4 h-4 text-red-500 fill-red-500" /> {t('footer.by')}{' '}
                         <a
                             href={appProfile.social.github}
                             target="_blank"
@@ -67,7 +69,7 @@ export function Footer() {
                         <span>© {currentYear} {appProfile.basic_info.author}</span>
                         <span className="hidden sm:inline"> · </span>
                         <br className="sm:hidden" />
-                        <span>Licensed under <span className="text-gray-500">{appProfile.basic_info.license}</span></span>
+                        <span>{t('footer.licensed_under')} <span className="text-gray-500">{appProfile.basic_info.license}</span></span>
                     </div>
                 </div>
             </div>

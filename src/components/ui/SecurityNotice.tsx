@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation, Trans } from 'react-i18next'
 import { AlertTriangle, ChevronDown, Shield, Github, ExternalLink } from 'lucide-react'
 
 export function SecurityNotice() {
+    const { t } = useTranslation()
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -15,7 +17,7 @@ export function SecurityNotice() {
             >
                 <AlertTriangle className="w-4 h-4 text-amber-600" />
                 <span className="text-sm font-medium text-amber-800">
-                    Security warning on first launch? Click to learn more
+                    {t('security.button_text')}
                 </span>
                 <ChevronDown
                     className={`w-4 h-4 text-amber-600 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
@@ -43,25 +45,21 @@ export function SecurityNotice() {
                                 {/* Center content */}
                                 <div className="flex-1 px-4 text-center">
                                     <h4 className="text-base font-semibold text-gray-900 mb-2">
-                                        About the macOS Security Warning
+                                        {t('security.title')}
                                     </h4>
                                     <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                                        As a student developer without an Apple Developer account ($99/year),
-                                        TimeBar is not code-signed. On first launch, macOS may display an
-                                        "unverified developer" warning.
+                                        {t('security.description_1')}
                                     </p>
                                     <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                                        <strong className="text-gray-800">Rest assured:</strong> TimeBar is
-                                        completely open source. All code is available on GitHub for review.
-                                        There is no malicious code—you can audit the source anytime.
+                                        <Trans i18nKey="security.description_2" components={{ strong: <strong className="text-gray-800" /> }} />
                                     </p>
 
                                     <div className="bg-gray-50 rounded-lg p-3 mb-4 text-left">
-                                        <p className="text-xs text-gray-600 font-medium mb-2 text-center">How to open the app:</p>
+                                        <p className="text-xs text-gray-600 font-medium mb-2 text-center">{t('security.how_to_open')}</p>
                                         <ol className="text-xs text-gray-600 space-y-1 text-center">
-                                            <li>1. Open <strong>System Settings</strong> → <strong>Privacy & Security</strong></li>
-                                            <li>2. Find TimeBar and click <strong>"Open Anyway"</strong></li>
-                                            <li>3. Launch TimeBar again to use normally</li>
+                                            <li>1. <Trans i18nKey="security.step_1" components={{ strong: <strong /> }} /></li>
+                                            <li>2. <Trans i18nKey="security.step_2" components={{ strong: <strong /> }} /></li>
+                                            <li>3. {t('security.step_3')}</li>
                                         </ol>
                                     </div>
 
@@ -74,7 +72,7 @@ export function SecurityNotice() {
                                             className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
                                         >
                                             <Github className="w-4 h-4" />
-                                            View Source Code
+                                            {t('security.view_source')}
                                         </a>
                                         <a
                                             href="https://support.apple.com/en-us/102445#openanyway"
@@ -83,7 +81,7 @@ export function SecurityNotice() {
                                             className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
                                         >
                                             <ExternalLink className="w-4 h-4" />
-                                            Apple Support
+                                            {t('security.apple_support')}
                                         </a>
                                     </div>
                                 </div>
