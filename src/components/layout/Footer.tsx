@@ -21,7 +21,8 @@ export function Footer() {
                                 {appProfile.basic_info.name}
                             </span>
                         </div>
-                        <p className="text-gray-500 text-sm text-center md:text-left whitespace-nowrap">
+                        {/* Mobile: wrap allowed, Desktop: nowrap */}
+                        <p className="text-gray-500 text-sm text-center md:text-left md:whitespace-nowrap">
                             {appProfile.basic_info.tagline}
                         </p>
                     </div>
@@ -49,7 +50,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom */}
-                <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col items-center gap-3">
                     <p className="text-gray-500 text-sm flex items-center gap-1">
                         Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{' '}
                         <a
@@ -61,10 +62,13 @@ export function Footer() {
                             {appProfile.basic_info.author}
                         </a>
                     </p>
-                    <p className="text-gray-400 text-sm">
-                        © {currentYear} {appProfile.basic_info.name}. Licensed under{' '}
-                        <span className="text-gray-500">{appProfile.basic_info.license}</span>
-                    </p>
+                    {/* Split into two lines on mobile */}
+                    <div className="text-gray-400 text-sm text-center">
+                        <span>© {currentYear} {appProfile.basic_info.author}</span>
+                        <span className="hidden sm:inline"> · </span>
+                        <br className="sm:hidden" />
+                        <span>Licensed under <span className="text-gray-500">{appProfile.basic_info.license}</span></span>
+                    </div>
                 </div>
             </div>
         </footer>
