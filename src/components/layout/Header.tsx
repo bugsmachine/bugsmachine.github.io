@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X, Github } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { appProfile } from '../../data/appProfile'
+import appIcon from '../../assets/app-icon.png'
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -16,16 +17,16 @@ export function Header() {
     }, [])
 
     const navItems = [
-        { label: 'Features', href: '#features' },
         { label: 'Screenshots', href: '#screenshots' },
+        { label: 'Features', href: '#features' },
         { label: 'Download', href: '#download' },
     ]
 
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100'
-                    : 'bg-transparent'
+                ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100'
+                : 'bg-transparent'
                 }`}
         >
             <nav className="container-wide mx-auto px-6 lg:px-8">
@@ -33,7 +34,7 @@ export function Header() {
                     {/* Logo */}
                     <a href="#" className="flex items-center gap-3 group">
                         <img
-                            src="/app-icon.png"
+                            src={appIcon}
                             alt={`${appProfile.basic_info.name} Icon`}
                             className="w-10 h-10 rounded-xl shadow-md group-hover:scale-105 transition-transform"
                         />

@@ -1,18 +1,19 @@
 import { Github, Heart } from 'lucide-react'
 import { appProfile } from '../../data/appProfile'
+import appIcon from '../../assets/app-icon.png'
 
 export function Footer() {
     const currentYear = new Date().getFullYear()
 
     return (
         <footer className="bg-gray-50 border-t border-gray-100">
-            <div className="container-wide mx-auto px-6 lg:px-8 py-12 lg:py-16">
+            <div className="container-wide mx-auto px-6 lg:px-8 py-8 lg:py-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     {/* Logo and Description */}
                     <div className="flex flex-col items-center md:items-start gap-3">
                         <div className="flex items-center gap-3">
                             <img
-                                src="/app-icon.png"
+                                src={appIcon}
                                 alt={`${appProfile.basic_info.name} Icon`}
                                 className="w-10 h-10 rounded-xl shadow-md"
                             />
@@ -20,7 +21,7 @@ export function Footer() {
                                 {appProfile.basic_info.name}
                             </span>
                         </div>
-                        <p className="text-gray-500 text-sm text-center md:text-left max-w-sm">
+                        <p className="text-gray-500 text-sm text-center md:text-left whitespace-nowrap">
                             {appProfile.basic_info.tagline}
                         </p>
                     </div>

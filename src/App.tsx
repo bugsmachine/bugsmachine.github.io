@@ -11,8 +11,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Features />
         <Screenshots />
+        <Features />
         <DownloadSection />
       </main>
       <Footer />

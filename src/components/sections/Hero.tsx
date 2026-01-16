@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Download, Github, ChevronDown } from 'lucide-react'
 import { appProfile } from '../../data/appProfile'
+import { SecurityNotice } from '../ui/SecurityNotice'
 import appIcon from '../../assets/app-icon.png'
 
 export function Hero() {
@@ -13,7 +14,7 @@ export function Hero() {
             <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl" />
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-light/20 rounded-full blur-3xl" />
 
-            <div className="relative z-10 container-narrow mx-auto px-6 pt-32 pb-20 text-center">
+            <div className="relative z-10 container-narrow mx-auto px-6 pt-24 pb-16 text-center">
                 {/* App Icon */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -94,6 +95,15 @@ export function Hero() {
                     <span>Privacy First</span>
                 </motion.div>
 
+                {/* Security Notice */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                    <SecurityNotice />
+                </motion.div>
+
                 {/* Scroll Indicator */}
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -102,7 +112,7 @@ export function Hero() {
                     className="absolute bottom-8 left-1/2 -translate-x-1/2"
                 >
                     <a
-                        href="#features"
+                        href="#screenshots"
                         className="flex flex-col items-center gap-2 text-gray-400 hover:text-primary-600 transition-colors"
                     >
                         <span className="text-sm font-medium">Learn More</span>
