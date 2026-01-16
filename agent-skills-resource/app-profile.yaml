@@ -1,0 +1,209 @@
+# App Profile: TimeBar
+# Generated: 2026-01-16
+# Source: GitHub (https://github.com/bugsmachine/TimeBar) + Local Source Code
+
+basic_info:
+  name: "TimeBar"
+  tagline: "Elegantly display additional time zones in your macOS menu bar"
+  description: "A lightweight, elegant macOS menu bar application for tracking time zones of colleagues, family, and friends around the world. Perfect for remote teams and global connections."
+  version: "1.0.0"
+  author: "bugsmachine"
+  author_description: "A student passionate about macOS development"
+  license: "CC BY-NC-SA 4.0"
+  license_details:
+    - "✅ Use, modify, and distribute the software"
+    - "✅ Use for personal and educational purposes"
+    - "📌 Attribution - Credit the original author"
+    - "🚫 Non-Commercial - Cannot be used for commercial purposes"
+    - "🔄 Share Alike - Any modifications must use the same license"
+
+brand_colors:
+  # Extracted from app icon - blue tones palette
+  primary: "#4A7EB5"           # Dark blue - clock outline
+  primary_light: "#8AB4E8"     # Medium blue - bookmark/ribbon
+  primary_dark: "#3D6A9A"      # Darker blue for depth
+  accent: "#5C91C7"            # Accent blue
+  background: "#ECF5FF"        # Light blue - clock face background
+  background_dark: "#1A2B3C"   # Dark mode background suggestion
+  text_primary: "#2D4A6B"      # Dark text
+  text_secondary: "#6B8BB3"    # Secondary text
+
+features:
+  - emoji: "🌍"
+    title: "Multiple Time Zones"
+    title_zh: "多时区显示"
+    description: "Display additional time zones directly in your menu bar. Perfect for remote teams and global connections."
+    description_zh: "在菜单栏中直接显示额外的时区。非常适合远程团队和全球连接。"
+    keywords: ["timezone", "global", "remote work", "international"]
+    
+  - emoji: "🚩"
+    title: "Country Flags"
+    title_zh: "国旗显示"
+    description: "Visual indicators showing the country/region flag for quick identification at a glance."
+    description_zh: "显示国家/地区国旗作为视觉标识，一眼即可快速识别。"
+    keywords: ["flags", "countries", "visual", "identification"]
+    
+  - emoji: "⏱️"
+    title: "Time Difference"
+    title_zh: "时差显示"
+    description: "See the offset from your local timezone instantly. Know who's awake without doing math."
+    description_zh: "即时查看与本地时区的差异。无需计算即可知道谁在工作。"
+    keywords: ["offset", "difference", "calculation", "convenience"]
+    
+  - emoji: "🌐"
+    title: "Multi-Language"
+    title_zh: "多语言支持"
+    description: "English, Simplified Chinese, and Traditional Chinese support with more languages coming soon."
+    description_zh: "支持英语、简体中文和繁体中文，更多语言即将推出。"
+    keywords: ["localization", "chinese", "english", "i18n"]
+    
+  - emoji: "⚙️"
+    title: "Highly Customizable"
+    title_zh: "高度可定制"
+    description: "Drag-and-drop component reordering, custom location names, and flexible display options."
+    description_zh: "拖放组件重新排序、自定义位置名称和灵活的显示选项。"
+    keywords: ["customization", "drag-drop", "configuration", "flexibility"]
+    
+  - emoji: "🔄"
+    title: "Auto Updates"
+    title_zh: "自动更新"
+    description: "Built-in update checks via Sparkle framework. Always stay up to date with new features."
+    description_zh: "通过 Sparkle 框架内置更新检查。始终保持最新功能。"
+    keywords: ["updates", "sparkle", "automatic", "maintenance"]
+    
+  - emoji: "💡"
+    title: "Lightweight"
+    title_zh: "轻量设计"
+    description: "Minimal resource usage. Sits quietly in your menu bar without slowing down your Mac."
+    description_zh: "资源占用极少。静静地驻留在菜单栏，不会拖慢您的 Mac。"
+    keywords: ["performance", "efficient", "minimal", "fast"]
+    
+  - emoji: "🔒"
+    title: "Privacy First"
+    title_zh: "隐私优先"
+    description: "Fully open source and offline-first. Your data never leaves your computer."
+    description_zh: "完全开源且离线优先。您的数据永远不会离开您的电脑。"
+    keywords: ["privacy", "security", "offline", "open-source"]
+
+components:
+  - emoji: "🕐"
+    name: "Time"
+    name_zh: "时间"
+    description: "The current time in selected timezone"
+    description_zh: "所选时区的当前时间"
+    
+  - emoji: "🌍"
+    name: "Flag/Location Name"
+    name_zh: "国旗/位置名称"
+    description: "Visual indicator or custom name"
+    description_zh: "视觉标识或自定义名称"
+    
+  - emoji: "📊"
+    name: "Time Difference"
+    name_zh: "时差"
+    description: "Offset from your local time"
+    description_zh: "与本地时间的偏移量"
+    
+  - emoji: "☀️"
+    name: "Day/Night Indicator"
+    name_zh: "日/夜指示器"
+    description: "Quick view of current lighting (☀️ Day / ☽ Night)"
+    description_zh: "快速查看当前光照状态（☀️ 白天 / ☽ 夜晚）"
+
+tech_stack:
+  language: "Swift"
+  framework: "SwiftUI"
+  platform: "macOS"
+  min_version: "14.1"
+  additional_frameworks:
+    - name: "AppKit"
+      purpose: "macOS integration and menu bar functionality"
+    - name: "Sparkle"
+      purpose: "Auto-update framework for seamless updates"
+    - name: "Combine"
+      purpose: "Reactive programming for data flow"
+
+requirements:
+  platforms:
+    - name: "macOS"
+      version: "14.1+ (Sonoma)"
+      chips: ["Apple Silicon", "Intel"]
+
+installation:
+  steps:
+    - "Visit the Releases page on GitHub"
+    - "Download the latest TimeBar.zip file"
+    - "Extract the archive"
+    - "Drag TimeBar.app to your Applications folder"
+  first_launch:
+    - "Open System Settings → Privacy & Security"
+    - "Find TimeBar under 'Security'"
+    - "Click 'Open Anyway' or 'Allow'"
+    - "Launch TimeBar again"
+  note: "TimeBar is developed by a student without a Developer subscription. The app is fully open source and safe to use."
+
+quick_start:
+  - "Launch TimeBar - It will appear in your menu bar (top-right corner)"
+  - "Click the TimeBar icon - Opens the menu"
+  - "Select 'Settings...' - Configure your time zones"
+  - "Choose a timezone - Select from any timezone worldwide"
+  - "Customize the display - Add country flags, custom location names, or show time differences"
+
+download:
+  github_releases: "https://github.com/bugsmachine/TimeBar/releases"
+  app_store: null
+
+social:
+  github: "https://github.com/bugsmachine/TimeBar"
+  twitter: null
+  website: null
+
+assets:
+  icon: "AppIcon.png"
+  icon_transparent: "TimeBarIcon-T.png"
+  icon_source: "Assets.xcassets/AppIcon.appiconset/"
+  screenshots:
+    - filename: "app- screenshot-1.png"
+      description: "Menu bar integration showing time zone with country flag and day/night indicator"
+      description_zh: "菜单栏集成，显示时区、国旗和日/夜指示器"
+      type: "menu-bar"
+    - filename: "app- screenshot-2.png"
+      description: "Settings panel with appearance customization, component ordering, and timezone selection"
+      description_zh: "设置面板，包含外观定制、组件排序和时区选择"
+      type: "settings"
+    - filename: "app- screenshot-3.png"
+      description: "About window showing app version, description, and license information"
+      description_zh: "关于窗口，显示应用版本、描述和许可证信息"
+      type: "about"
+
+seo_keywords:
+  primary:
+    - "macOS menu bar time zone"
+    - "timezone app Mac"
+    - "world clock menu bar"
+    - "multiple time zones macOS"
+  secondary:
+    - "remote team time management"
+    - "global time tracking"
+    - "SwiftUI menu bar app"
+    - "open source timezone app"
+
+marketing_copy:
+  hero_headline: "Time Zones, Simplified"
+  hero_subheadline: "Track the time anywhere in the world, right from your Mac menu bar"
+  cta_primary: "Download Free"
+  cta_secondary: "View on GitHub"
+  
+  value_propositions:
+    - "Never miss a meeting with international colleagues"
+    - "Know when your remote team is online at a glance"
+    - "Stay connected with family and friends across time zones"
+    - "Lightweight app that respects your privacy"
+
+languages_supported:
+  - code: "en"
+    name: "English"
+  - code: "zh-Hans"
+    name: "简体中文 (Simplified Chinese)"
+  - code: "zh-Hant"
+    name: "繁體中文 (Traditional Chinese)"
