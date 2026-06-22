@@ -1,13 +1,10 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // For GitHub Pages: github.io/timebar
-  base: '/timebar/',
-  build: {
-    // Output to dist/timebar/ so it matches the base URL path
-    outDir: 'dist/timebar',
+  test: {
+    environment: 'jsdom',
   },
 })

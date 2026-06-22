@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Project-specific ignores
+# Local workspace artifacts from the previous Timebar checkout
 .agent/
 .source-code/
 agent-skills-resource/

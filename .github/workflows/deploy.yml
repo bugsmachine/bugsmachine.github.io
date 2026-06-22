@@ -31,18 +31,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Build
-        run: pnpm build
+        run: npm run build
 
-      - name: Create root redirect
-        run: |
-          cp public/redirect.html dist/index.html
-          touch dist/.nojekyll
+      - name: Keep Pages from running Jekyll
+        run: touch dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
